@@ -16,6 +16,7 @@ class Book
     private String refNumber = "";
     int refNumberLength = refNumber.length();
     private String oldRefNumber;
+    private int borrowed;
 
     /**
      * Set the author and title fields when this object
@@ -47,11 +48,13 @@ class Book
     {
         if (refNumberLength < 3) {
         details = "Title: " + title + " by: " + author + ". " + pages
-         + " pages. Reference Number: ZZZ";
+         + " pages. Reference Number: ZZZ. This book has been borrowed " + 
+         borrowed + " times.";
         }
         else {
          details = "Title: " + title + " by: " + author + ". " + pages
-         + " pages. Reference Number: " + refNumber;   
+         + " pages. Reference Number: " + refNumber + ". This book has been borrowed " 
+         + borrowed + " times.";   
         }
         System.out.println(details);
     }
@@ -78,6 +81,16 @@ class Book
     public void updateRefNumberLength()
     {
         int refNumberLength = refNumber.length();
+    }
+    
+    public void borrow()
+    {
+        borrowed++;
+    }
+    
+    public int getBorrowed(int borrowed)
+    {
+        return borrowed;
     }
     
 }
