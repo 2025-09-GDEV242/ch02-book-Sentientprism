@@ -14,6 +14,8 @@ class Book
     private int pages;
     private String details;
     private String refNumber = "";
+    int refNumberLength = refNumber.length();
+    private String oldRefNumber;
 
     /**
      * Set the author and title fields when this object
@@ -43,7 +45,6 @@ class Book
     
     public void printDetails()
     {
-        int refNumberLength = refNumber.length();
         if (refNumberLength < 3) {
         details = "Title: " + title + " by: " + author + ". " + pages
          + " pages. Reference Number: ZZZ";
@@ -57,12 +58,26 @@ class Book
     
     public void setRefNumber(String ref)
     {
+        oldRefNumber = refNumber;
         refNumber = ref;
+        updateRefNumberLength();
+        if (refNumberLength < 3)
+        {
+            System.out.println("The entered string is too short, IDIOT!!!!");
+            System.out.println("Make it at least three characters pretty please");
+            refNumber = oldRefNumber;
+            updateRefNumberLength();
+        }
     }
     
     public void getRefNumber()
     {
         System.out.println(refNumber);
+    }
+    
+    public void updateRefNumberLength()
+    {
+        int refNumberLength = refNumber.length();
     }
     
 }
