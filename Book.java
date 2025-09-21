@@ -12,33 +12,39 @@ class Book
     private String author;
     private String title;
     private int pages;
+    private String details;
 
     /**
      * Set the author and title fields when this object
      * is constructed.
      */
-    public Book(String bookAuthor, String bookTitle)
+    public Book(String bookAuthor, String bookTitle, int bookPages)
     {
         author = bookAuthor;
         title = bookTitle;
+        pages = bookPages;
     }
 
-    public String printAuthor(String author)
+    public void printAuthor()
     {
         System.out.print(author);
-        return author;
     }
     
-    public String printTitle(String title)
+    public void printTitle()
     {
         System.out.print(title);
-        return title;
     }
     
-    public int printPages(int pages)
+    public void printPages()
     {
         System.out.print(pages);
-        return pages;
+    }
+    
+    public void printDetails()
+    {
+        details = "Title: " + title + " by: " + author + ". " + pages
+         + " pages.";
+        System.out.print(details);
     }
     
 }
