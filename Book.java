@@ -13,6 +13,7 @@ class Book
     private String title;
     private int pages;
     private String details;
+    private String refNumber = "";
 
     /**
      * Set the author and title fields when this object
@@ -27,24 +28,34 @@ class Book
 
     public void printAuthor()
     {
-        System.out.print(author);
+        System.out.println(author);
     }
     
     public void printTitle()
     {
-        System.out.print(title);
+        System.out.println(title);
     }
     
     public void printPages()
     {
-        System.out.print(pages);
+        System.out.println(pages);
     }
     
     public void printDetails()
     {
         details = "Title: " + title + " by: " + author + ". " + pages
          + " pages.";
-        System.out.print(details);
+        System.out.println(details);
+    }
+    
+    public void setRefNumber(String ref)
+    {
+        refNumber = ref;
+    }
+    
+    public void getRefNumber()
+    {
+        System.out.println(refNumber);
     }
     
 }
