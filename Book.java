@@ -43,8 +43,15 @@ class Book
     
     public void printDetails()
     {
+        int refNumberLength = refNumber.length();
+        if (refNumberLength < 3) {
         details = "Title: " + title + " by: " + author + ". " + pages
-         + " pages.";
+         + " pages. Reference Number: ZZZ";
+        }
+        else {
+         details = "Title: " + title + " by: " + author + ". " + pages
+         + " pages. Reference Number: " + refNumber;   
+        }
         System.out.println(details);
     }
     
